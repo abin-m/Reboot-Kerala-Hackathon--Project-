@@ -31,8 +31,10 @@ class AuthService {
     loading.add(true);
     GoogleSignInAccount googleUser = await _googleSignIn.signIn();
     GoogleSignInAuthentication googleAuth = await googleUser.authentication;
-    FirebaseUser user = await _auth.signInWithGoogle(
-        accessToken: googleAuth.accessToken, idToken: googleAuth.idToken);
+    final AuthCredential user = GoogleAuthProvider.getCredential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
     updateUserData(user);
     print("Signed in" + user.displayName);
     loading.add(false);

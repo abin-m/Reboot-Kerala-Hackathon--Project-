@@ -31,7 +31,7 @@ class LoginOptions extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
-                    return LoginPage();
+                    return LoginScreen();
                   }));
                 },
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 50),
@@ -52,7 +52,7 @@ class LoginOptions extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
-                    return Registration();
+                    return RegistrationScreen();
                   }));
                 },
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 50),

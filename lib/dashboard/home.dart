@@ -1,6 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:jyothi/dashboard/clerkQuiz.dart';
+import 'package:jyothi/dashboard/competencyquiz.dart';
+import 'package:jyothi/dashboard/kila.dart';
 
-class Home extends StatelessWidget {
+final _firestore = Firestore.instance;
+FirebaseUser loggedInUser;
+String name = " ";
+String job = " ";
+
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  final _auth = FirebaseAuth.instance;
+  @override
+  void initState() {
+    super.initState();
+
+    getmessages();
+    getCurrentUser();
+  }
+
+  void getCurrentUser() async {
+    try {
+      final user = await _auth.currentUser();
+      if (user != null) {
+        loggedInUser = user;
+        print(user);
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,10 +62,10 @@ class Home extends StatelessWidget {
                     radius: 30.0,
                   ),
                   title: Text(
-                    'Abin M ',
+                    name,
                     style: TextStyle(fontSize: 20, fontStyle: FontStyle.italic),
                   ),
-                  subtitle: Text('Executive Engineer'),
+                  subtitle: Text(job),
                 ),
               ),
             ),
@@ -42,7 +78,20 @@ class Home extends StatelessWidget {
                   height: 35,
                 ),
                 FlatButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    if (job == 'Secretary') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Quiz()),
+                      );
+                    }
+                    if (job == 'Clerk') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ClerkQuiz()),
+                      );
+                    }
+                  },
                   child: Card(
                     elevation: 15,
                     child: ListTile(
@@ -51,7 +100,7 @@ class Home extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 20, fontStyle: FontStyle.italic),
                       ),
-                      subtitle: Text('Executive Engineer'),
+                      subtitle: Text(job),
                     ),
                   ),
                 ),
@@ -60,19 +109,24 @@ class Home extends StatelessWidget {
                   child: Card(
                     elevation: 15,
                     child: FlatButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Kila()),
+                        );
+                      },
                       child: ListTile(
                         title: Text(
                           'Additional courses',
                           style: TextStyle(
                               fontSize: 20, fontStyle: FontStyle.italic),
                         ),
-                        subtitle: Text('Executive Engineer'),
+                        subtitle: Text(job),
                       ),
                     ),
                   ),
                 ),
-                FlatButton(
+                /*FlatButton(
                   onPressed: () {},
                   child: Card(
                     elevation: 15,
@@ -84,7 +138,7 @@ class Home extends StatelessWidget {
                           style: TextStyle(
                               fontSize: 20, fontStyle: FontStyle.italic),
                         ),
-                        subtitle: Text('Executive Engineer'),
+                        subtitle: Text(job),
                       ),
                     ),
                   ),
@@ -103,9 +157,9 @@ class Home extends StatelessWidget {
                         ),
                         subtitle: Text('Executive Engineer'),
                       ),
-                    ),
+                    )
                   ),
-                ),
+                ),*/
               ],
             )
           ],
@@ -113,4 +167,24 @@ class Home extends StatelessWidget {
       ),
     );
   }
+
+  void getmessages() async {
+    final userdata = await _firestore.collection('userdata').getDocuments();
+    for (var msg in userdata.documents) {
+      if (msg.data['email'] == loggedInUser.email) {
+        setState(() {
+          name = msg.data['name'];
+          job = msg.data['job'];
+        });
+      }
+    }
+  }
 }
+
+/*class Home extends StatelessWidget {
+  
+  @override
+  Widget build(BuildContext context) {
+    return 
+  }
+}*/

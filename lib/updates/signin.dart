@@ -5,112 +5,28 @@ class Ghome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(children:<Widget> [
-          MaterialButton(onPressed: ()=> null,
-          color: Colors.white,
-          textColor: Colors.white,
-          disabledTextColor: Colors.black,
-          child: Text('Login With google'),
-          ),
-          MaterialButton(onPressed: ()=> null,
-          color: Colors.red,
-          textColor: Colors.white,
-          disabledTextColor: Colors.black,
-          child: Text('Log out'),
-          ),
-        ],),
+        child: Column(
+          children: <Widget>[
+            MaterialButton(
+              onPressed: () => null,
+              color: Colors.white,
+              textColor: Colors.white,
+              disabledTextColor: Colors.black,
+              child: Text('Login With google'),
+            ),
+            MaterialButton(
+              onPressed: () => null,
+              color: Colors.red,
+              textColor: Colors.white,
+              disabledTextColor: Colors.black,
+              child: Text('Log out'),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -171,4 +87,4 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-}
+}*/
