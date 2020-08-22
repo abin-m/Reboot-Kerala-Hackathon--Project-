@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">764223021902-jhd68hogv1m2ok7nj7sjoh8mi2hutfgn.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://reboot-hck.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">764223021902</string>
+    <string name="google_api_key" translatable="false">AIzaSyAEZ5pHijArifJWYkzcl8GlUytDg-w17LM</string>
+    <string name="google_app_id" translatable="false">1:764223021902:android:91881603e7bc5d377a341f</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAEZ5pHijArifJWYkzcl8GlUytDg-w17LM</string>
+    <string name="google_storage_bucket" translatable="false">reboot-hck.appspot.com</string>
+    <string name="project_id" translatable="false">reboot-hck</string>
+</resources>

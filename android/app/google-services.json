@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "764223021902",
+    "firebase_url": "https://reboot-hck.firebaseio.com",
+    "project_id": "reboot-hck",
+    "storage_bucket": "reboot-hck.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764223021902:android:91881603e7bc5d377a341f",
+        "android_client_info": {
+          "package_name": "com.example.jyothi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "764223021902-jhd68hogv1m2ok7nj7sjoh8mi2hutfgn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEZ5pHijArifJWYkzcl8GlUytDg-w17LM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "764223021902-jhd68hogv1m2ok7nj7sjoh8mi2hutfgn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
