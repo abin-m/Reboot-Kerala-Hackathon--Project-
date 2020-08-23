@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jyothi/Activities/assigntask.dart';
 import 'package:jyothi/dashboard/fileread.dart';
 
 //Admins Home page
@@ -85,11 +86,19 @@ class _AdminsHomeState extends State<AdminsHome> {
                         MaterialPageRoute(builder: (context) => Analysis()),
                       );
                     },
-                    child: ListTile(
-                      title: Text(
-                        'Notify Members',
-                        style: TextStyle(
-                            fontSize: 20, fontStyle: FontStyle.italic),
+                    child: FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => AssignTask()),
+                        );
+                      },
+                      child: ListTile(
+                        title: Text(
+                          'Assign Tasks',
+                          style: TextStyle(
+                              fontSize: 20, fontStyle: FontStyle.italic),
+                        ),
                       ),
                     ),
                   ),

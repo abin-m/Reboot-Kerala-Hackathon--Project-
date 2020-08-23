@@ -16,6 +16,7 @@ class ClerkQuiz extends StatelessWidget {
         ),
       ),
       body: WebView(
+        javascriptMode: JavascriptMode.unrestricted,
         initialUrl:
             "https://docs.google.com/forms/d/e/1FAIpQLSd4mVD4bPPWwDLK51fcyzv76SxxChVCuIyJtoRr10VLLTOntw/viewform",
       ),

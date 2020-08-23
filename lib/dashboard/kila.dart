@@ -16,6 +16,7 @@ class Kila extends StatelessWidget {
         ),
       ),
       body: WebView(
+        javascriptMode: JavascriptMode.unrestricted,
         initialUrl: "https://ecourses.kila.ac.in/",
       ),
     );
