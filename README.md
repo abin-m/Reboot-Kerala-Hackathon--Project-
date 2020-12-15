@@ -1,6 +1,7 @@
-# jyothi
+# jyothi- A tool for competancy mapping
 
-A new Flutter project.
+it is a mobile app designed to map the competancy of government employees.
+it is partially completed like to complete this project.
 
 ## Getting Started
 
